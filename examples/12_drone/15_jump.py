@@ -29,11 +29,27 @@ if __name__ == '__main__':
     tl_flight.takeoff().wait_for_completed()
 
     # 飞行
-    tl_flight.go(x=30, y=30, z=100, speed=30, mid="m1").wait_for_completed()
-    tl_flight.jump(x=0, y=0, z=100, speed=20, yaw=90, mid1="m1", mid2="m2").wait_for_completed()
-    tl_flight.jump(x=0, y=0, z=100, speed=20, yaw=-90, mid1="m1", mid2="m2").wait_for_completed()
+    tl_flight.go(x=0, y=0, z=50, speed=30, mid="m1").wait_for_completed()
+    tl_flight.jump(x=30, y=0, z=100, speed=20, yaw=0, mid1="m1", mid2="m8").wait_for_completed()
+    tl_flight.go(x=0, y=0, z=20, speed=30, mid="m8").wait_for_completed()
+    tl_flight.jump(x=-30, y=0, z=100, speed=20, yaw=0, mid1="m8", mid2="m1").wait_for_completed()
+    tl_flight.flip_backward().wait_for_completed()
+    tl_flight.go(x=0, y=0, z=20, speed=20, mid="m1").wait_for_completed()
+    # tl_flight.go(x=0, y=0, z=120, speed=30, mid="m8").wait_for_completed()
+    # tl_flight.go(z=150).wait_for_completed()
+    # tl_flight.flip_forward().wait_for_completed()
+    # tl_flight.go(z=80).wait_for_completed()
+    # tl_flight.flip_left().wait_for_completed()
+    # tl_flight.flip_right().wait_for_completed()
+    # tl_flight.jump(x=-50, y=0, z=100, speed=20, yaw=-90, mid1="m8", mid2="m1").wait_for_completed()
+    # tl_flight.go(x=0, y=0, z=15, speed=40, mid="m8").wait_for_completed()
+
+    # while tl_flight.get_mission_pad_id() != 8:
+    #     #foo
 
     tl_flight.land().wait_for_completed()
     tl_flight.mission_pad_off()
+
+
 
     tl_drone.close()

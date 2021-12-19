@@ -53,6 +53,7 @@ class FlightAction(action.TextAction):
     _action_proto_cls = protocol.TextProtoDrone
     _push_proto_cls = protocol.TextProtoDrone
     _target = 'Flight'
+    _target = 'Flight'
 
     def __init__(self, text_cmd, **kw):
         super().__init__(**kw)

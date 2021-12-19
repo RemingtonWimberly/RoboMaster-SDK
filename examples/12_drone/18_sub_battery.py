@@ -32,6 +32,8 @@ if __name__ == '__main__':
     tl_drone.battery.sub_battery_info(freq=1, callback=sub_battery_info_handler)
     time.sleep(5)
 
+    tl_drone.flight.sub_imu()
+
     # 取消订阅
     tl_drone.battery.unsub_battery_info()
 
